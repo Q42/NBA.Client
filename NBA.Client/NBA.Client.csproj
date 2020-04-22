@@ -5,6 +5,16 @@
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
     <WarningsAsErrors>CS8600;CS8601;CS8602;CS8603;CS8625;CS8613;CS8610</WarningsAsErrors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Q42</Company>
+    <Authors>Michiel Post</Authors>
+    <Version>0.0.1</Version>
+    <Product>Netherlands Biodiversity API Client</Product>
+    <PackageProjectUrl>https://github.com/Q42/NBA.Client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Q42/NBA.Client</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>naturalis biodiversity</PackageTags>
+    <Description>Naturalis Netherlands Biodiversity API Client</Description>
   </PropertyGroup>
 
   <ItemGroup>
