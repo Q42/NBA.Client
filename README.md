@@ -12,9 +12,26 @@ Download the source from GitHub or get the compiled assembly from NuGet [NBA.Cli
 ## Example Usage
 
 ```cs
-var client = NBAClient.GetClient();
-
-var specimen = await _client.GetSpecimen("Urtica dioica");
+QuerySpec q = new QuerySpec
+{
+    Conditions = new System.Collections.Generic.List<Condition>
+    {
+        new Condition
+        {
+            Field = "acceptedName.fullScientificName",
+            Operator = Operator.STARTS_WITH,
+            Value = "Urtica dioica"
+        },
+        new Condition
+        {
+            Field = "taxonRank",
+            Operator = Operator.EQUALS,
+            Value = "species"
+        }
+    },
+    LogicalOperator = LogicalOperator.AND
+};
+var result = await _client.GetTaxon(q);
 ```
 
 
