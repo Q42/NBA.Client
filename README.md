@@ -1,5 +1,5 @@
-# NBA.Client
-Netherlands Biodiversity API Client
+# Netherlands Biodiversity API Client
+NBA.Client
 
 API Documentation: http://docs.biodiversitydata.nl/en/latest/   
 Swagger: https://docs.biodiversitydata.nl/endpoints-reference/
