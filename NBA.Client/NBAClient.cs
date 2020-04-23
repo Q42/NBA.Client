@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using RestEase;
 using System;
+using System.Collections.Generic;
 
 namespace NBA.Client
 {
@@ -17,7 +19,8 @@ namespace NBA.Client
                 JsonSerializerSettings = new JsonSerializerSettings()
                 {
                     ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                    NullValueHandling = NullValueHandling.Ignore
+                    NullValueHandling = NullValueHandling.Ignore,
+                    Converters = new List<JsonConverter> { new StringEnumConverter() }
                 }
             }.For<INBApi>();
             return nbApi;

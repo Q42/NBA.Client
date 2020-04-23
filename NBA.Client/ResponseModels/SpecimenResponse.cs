@@ -77,33 +77,4 @@ namespace NBA.Client.ResponseModels
         public bool? Preferred { get; set; }
     }
 
-    public partial class DefaultClassification
-    {
-        public string Kingdom { get; set; }
-        public string? Family { get; set; }
-        public string Genus { get; set; }
-        public string SpecificEpithet { get; set; }
-    }
-
-    public partial class ScientificName
-    {
-        public string? FullScientificName { get; set; }
-        public string GenusOrMonomial { get; set; }
-        public string SpecificEpithet { get; set; }
-        public string ScientificNameGroup { get; set; }
-    }
-
-    public partial class VernacularName
-    {
-        public string Name { get; set; }
-        public string Language { get; set; }
-        public bool? Preferred { get; set; }
-    }
-
-    public partial class SourceSystem
-    {
-        public string? Code { get; set; }
-        public string? Name { get; set; }
-    }
-
 }

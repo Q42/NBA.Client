@@ -6,24 +6,15 @@ using System.Threading.Tasks;
 namespace NBA.Client.Tests
 {
     [TestClass]
-    public class GetSpecimenTests
+    public class GetTaxonTests
     {
         private INBApi _client;
 
-        public GetSpecimenTests()
+        public GetTaxonTests()
         {
             _client = NBAClient.GetClient();
         }
 
-        [TestMethod]
-        public async Task GetByScientificName()
-        {
-            string name = "Urtica dioica";
-            var result = await _client.GetSpecimenByScientificName(name);
-
-            Assert.IsTrue(result.TotalSize > 0);
-            Assert.IsTrue(result.ResultSet.First().Item.Identifications.Any(x => x.ScientificName.FullScientificName == name));
-        }
 
         [TestMethod]
         public async Task GetWithQuerySpec()
@@ -35,23 +26,23 @@ namespace NBA.Client.Tests
                 {
                     new Condition
                     {
-                        Field = "identifications.scientificName.fullScientificName",
+                        Field = "acceptedName.fullScientificName",
                         Operator = Operator.STARTS_WITH,
                          Value = name
                     },
                     new Condition
                     {
-                        Field = "identifications.taxonRank",
+                        Field = "taxonRank",
                         Operator = Operator.EQUALS,
                          Value = "species"
                     }
                 },
                 LogicalOperator = LogicalOperator.AND
             };
-            var result = await _client.GetSpecimen(q);
+            var result = await _client.GetTaxon(q);
 
             Assert.IsTrue(result.TotalSize > 0);
-            Assert.IsTrue(result.ResultSet.First().Item.Identifications.Any(x => x.ScientificName.ScientificNameGroup.Equals(name, System.StringComparison.InvariantCultureIgnoreCase)));
+            Assert.IsTrue(result.ResultSet.First().Item.AcceptedName.ScientificNameGroup.Equals(name, System.StringComparison.InvariantCultureIgnoreCase));
         }
     }
 }
