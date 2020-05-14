@@ -4,7 +4,7 @@ NBA.Client
 API Documentation: http://docs.biodiversitydata.nl/en/latest/   
 Swagger: https://docs.biodiversitydata.nl/endpoints-reference/
 
-Easily communicate with Netherlands Biodiversity API using C#
+Easily communicate with Naturalis / Netherlands Biodiversity API using C#
 
 ## How To install?
 Download the source from GitHub or get the compiled assembly from NuGet [NBA.Client on NuGet](https://nuget.org/packages/NBA.Client).
