@@ -28,6 +28,9 @@ namespace NBA.Client.ResponseModels
         public List<SystemClassification> SystemClassification { get; set; }
         public List<VernacularName> VernacularNames { get; set; }
         public List<Reference> References { get; set; }
+        public string SourceSystemParentId { get; set; }
+        public string OccurrenceStatusVerbatim { get; set; }
+        public List<TaxonDescription> Descriptions { get; set; } = new List<TaxonDescription>();
     }
 
     public partial class AcceptedName
@@ -58,6 +61,16 @@ namespace NBA.Client.ResponseModels
     {
         public string Rank { get; set; }
         public string Name { get; set; }
+    }
+
+    public partial class TaxonDescription
+    {
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public string Language { get; set; }
+        public List<string> Author { get; set; }
+        public string License { get; set; }
+        public string PublicationDate { get; set; }
     }
 
 }

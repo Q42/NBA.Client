@@ -6,6 +6,8 @@ namespace NBA.Client.RequestModels
 {
     public class QuerySpec
     {
+        public List<string>? Fields { get; set; }
+
         public List<Condition> Conditions { get; set; } = new List<Condition>();
         public List<SortField> SortFields { get; set; } = new List<SortField>();
         public LogicalOperator LogicalOperator { get; set; }

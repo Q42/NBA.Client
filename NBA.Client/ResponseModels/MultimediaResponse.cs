@@ -39,10 +39,6 @@ namespace NBA.Client.ResponseModels
         public List<MultimediaIdentification> Identifications { get; set; }
     }
 
-    public partial class GatheringEvent
-    {
-    }
-
     public partial class MultimediaIdentification
     {
         public ScientificName ScientificName { get; set; }

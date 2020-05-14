@@ -16,6 +16,9 @@ namespace NBA.Client
         [Post("specimen/query")]
         Task<SpecimenResponse> GetSpecimen([Body]QuerySpec querySpec);
 
+        [Get("specimen/find/{id}")]
+        Task<SpecimenItem?> GetSpecimenById([Path(Name = "id")]string id);
+
         [Post("taxon/query")]
         Task<TaxonResponse> GetTaxon([Body]QuerySpec querySpec);
 
